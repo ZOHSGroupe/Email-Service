@@ -1,0 +1,3 @@
+# Include necessary files
+!.venv/
+!command.md

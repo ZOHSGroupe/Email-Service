@@ -1,0 +1,181 @@
+openapi: 3.0.0
+info:
+  title: email service
+  version: 1.0.0
+servers:
+  - url: "http://127.0.0.1:5000"
+paths:
+  /email/sentverificationcode:
+    post:
+      summary: Send code verification
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: Successful operation
+  /email/accountpending:
+    post:
+      summary: Pending client
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: Successful operation
+  /email/accountcreated:
+    post:
+      summary: Admin accept add client and activate compte
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: Successful operation
+  /email/accountnotcreated:
+    post:
+      summary: Admin rejecte add client and send to it an description of problem
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+              message: "the nationale carte is not in the zip file "
+      responses:
+        '200':
+          description: Successful operation
+  /email/viheculepending:
+    post:
+      summary: Pending vihecule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: Successful operation
+  /email/viheculecreated:
+    post:
+      summary: Admin accept add vihecule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: Successful operation
+  /email/viheculenotcreated:
+    post:
+      summary: Admin rejeter add vihecule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+              message: "You have a problem in the careete visite of the car"
+      responses:
+        '200':
+          description: Successful operation
+  /email/permitpending:
+    post:
+      summary: Pending permit
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: Successful operation
+  /email/permitcreated:
+    post:
+      summary: Admin accept permit
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: Successful operation
+  /email/permitnotcreated:
+    post:
+      summary: Admin rejecte add permit
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+              message: "You have a problem in the BLA BLA BLA "
+      responses:
+        '200':
+          description: Successful operation
+  /email/assurancepending:
+    post:
+      summary: Assurance pending
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: Successful operation
+  /email/assurancecreated:
+    post:
+      summary: Admin accept assurance
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: Successful operation
+  /email/assurancenotcreated:
+    post:
+      summary: Admin rejecte add assurance
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+              message: "You have a problem in the BLA BLA BLA "
+      responses:
+        '200':
+          description: Successful operation
+
