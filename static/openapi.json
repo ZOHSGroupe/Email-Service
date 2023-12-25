@@ -1,181 +1,216 @@
 openapi: 3.0.0
 info:
-  title: email service
-  version: 1.0.0
-servers:
-  - url: "http://127.0.0.1:5000"
-paths:
-  /email/sentverificationcode:
-    post:
-      summary: Send code verification
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-      responses:
-        '200':
-          description: Successful operation
-  /email/accountpending:
-    post:
-      summary: Pending client
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-      responses:
-        '200':
-          description: Successful operation
-  /email/accountcreated:
-    post:
-      summary: Admin accept add client and activate compte
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-      responses:
-        '200':
-          description: Successful operation
-  /email/accountnotcreated:
-    post:
-      summary: Admin rejecte add client and send to it an description of problem
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-              message: "the nationale carte is not in the zip file "
-      responses:
-        '200':
-          description: Successful operation
-  /email/viheculepending:
-    post:
-      summary: Pending vihecule
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-      responses:
-        '200':
-          description: Successful operation
-  /email/viheculecreated:
-    post:
-      summary: Admin accept add vihecule
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-      responses:
-        '200':
-          description: Successful operation
-  /email/viheculenotcreated:
-    post:
-      summary: Admin rejeter add vihecule
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-              message: "You have a problem in the careete visite of the car"
-      responses:
-        '200':
-          description: Successful operation
-  /email/permitpending:
-    post:
-      summary: Pending permit
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-      responses:
-        '200':
-          description: Successful operation
-  /email/permitcreated:
-    post:
-      summary: Admin accept permit
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-      responses:
-        '200':
-          description: Successful operation
-  /email/permitnotcreated:
-    post:
-      summary: Admin rejecte add permit
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-              message: "You have a problem in the BLA BLA BLA "
-      responses:
-        '200':
-          description: Successful operation
-  /email/assurancepending:
-    post:
-      summary: Assurance pending
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-      responses:
-        '200':
-          description: Successful operation
-  /email/assurancecreated:
-    post:
-      summary: Admin accept assurance
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-      responses:
-        '200':
-          description: Successful operation
-  /email/assurancenotcreated:
-    post:
-      summary: Admin rejecte add assurance
-      requestBody:
-        required: true
-        content:
-          application/json:
-            example:
-              username: "Ouail Laamiri"
-              email: "laamiri.ouail@etu.uae.ac.ma"
-              message: "You have a problem in the BLA BLA BLA "
-      responses:
-        '200':
-          description: Successful operation
+  title: "Email Service API"
+  description: "API for sending verification codes, managing accounts, and handling various email-related functionalities."
+  version: "1.0.0"
 
+paths:
+  /email/send-verification-code:
+    post:
+      summary: "Send Code Verification"
+      description: "Endpoint to send a verification code via email."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: "Code sent successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/account-pending:
+    post:
+      summary: "Pending Client"
+      description: "Endpoint for notifying a pending client account."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: "Account pending."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/account-created:
+    post:
+      summary: "Admin Accept Add Client and Activate Account"
+      description: "Endpoint for admin to accept adding a client and activate the account."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: "Account created successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/account-not-created:
+    post:
+      summary: "Admin Reject Add Client and Send Problem Description"
+      description: "Endpoint for admin to reject adding a client and send a description of the problem."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+              message: "The national card is not in the zip file"
+      responses:
+        '200':
+          description: "Rejection notification sent successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/vihecule-pending:
+    post:
+      summary: "Pending Vehicle"
+      description: "Endpoint for notifying a pending vehicle addition."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: "Vehicle pending notification sent successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/vihecule-created:
+    post:
+      summary: "Admin Accept Add Vehicle"
+      description: "Endpoint for admin to accept adding a vehicle."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: "Vehicle added successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/vihecule-not-created:
+    post:
+      summary: "Admin Reject Add Vehicle and Send Problem Description"
+      description: "Endpoint for admin to reject adding a vehicle and send a description of the problem."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+              message: "You have a problem in the car's visit certificate"
+      responses:
+        '200':
+          description: "Rejection notification sent successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/permit-pending:
+    post:
+      summary: "Pending Permit"
+      description: "Endpoint for notifying a pending permit addition."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: "Permit pending notification sent successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/permit-created:
+    post:
+      summary: "Admin Accept Permit"
+      description: "Endpoint for admin to accept adding a permit."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: "Permit added successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/permit-not-created:
+    post:
+      summary: "Admin Reject Permit and Send Problem Description"
+      description: "Endpoint for admin to reject adding a permit and send a description of the problem."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+              message: "You have a problem in the BLA BLA BLA"
+      responses:
+        '200':
+          description: "Rejection notification sent successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/assurance-pending:
+    post:
+      summary: "Assurance Pending"
+      description: "Endpoint for notifying a pending assurance addition."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: "Assurance pending notification sent successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/assurance-created:
+    post:
+      summary: "Admin Accept Assurance"
+      description: "Endpoint for admin to accept adding an assurance."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+      responses:
+        '200':
+          description: "Assurance added successfully."
+        '400':
+          description: "Bad request. Check your input."
+
+  /email/assurance-not-created:
+    post:
+      summary: "Admin Reject Assurance and Send Problem Description"
+      description: "Endpoint for admin to reject adding an assurance and send a description of the problem."
+      requestBody:
+        content:
+          application/json:
+            example:
+              username: "Ouail Laamiri"
+              email: "laamiri.ouail@etu.uae.ac.ma"
+              message: "You have a problem in the BLA BLA BLA"
+      responses:
+        '200':
+          description: "Rejection notification
