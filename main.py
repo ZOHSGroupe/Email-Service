@@ -13,6 +13,7 @@ load_dotenv()
 
 def send_email_(subject, body, message: bool = False, verification_code: bool = False):
     try:
+        verification_codei:str=""
         # Get JSON data from the request body
         data = request.json
 
@@ -34,6 +35,7 @@ def send_email_(subject, body, message: bool = False, verification_code: bool = 
         if message:
             is_sended: bool = send_email(data['email'], subject,
                                          body.format(username=data["username"], message=data["message"]), None)
+            return jsonify({"message": "Email sent successfully", "status": "success"}), 200
         elif verification_code:
             verification_codei: str = generate_random_code()
             # Send the verification code email
@@ -42,7 +44,9 @@ def send_email_(subject, body, message: bool = False, verification_code: bool = 
                                          None)
         else:
             is_sended: bool = send_email(data['email'], subject, body.format(username=data["username"]), None)
-        if is_sended:
+        if is_sended and verification_code:
+            return jsonify({"message": "Email sent successfully", "status": "success", "code": verification_codei}), 200
+        elif is_sended:
             return jsonify({"message": "Email sent successfully", "status": "success"}), 200
         else:
             return jsonify({"message": "Failed to send email", "status": "error"}), 500
