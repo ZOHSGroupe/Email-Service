@@ -134,6 +134,6 @@ def assurance_not_added_successfully():
                        os.getenv("BODY_EMAIL_PROBLEM_IN_ADD_ASSURANCE"), True)
 
 
-@app.route('/api/docs', methods=['GET'])
+@app.route('/docs', methods=['GET'])
 def get_docs():
     return render_template('swaggerui.html')
