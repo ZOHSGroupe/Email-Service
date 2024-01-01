@@ -21,6 +21,98 @@ $ docker build -t email-service .
 # Run docker image
 $ docker run -p 5000:5000 email-service
 ```
+
+## Available Endpoints
+
+### 1. Index
+
+- **Endpoint:** `/`
+- **Method:** GET
+- **Description:** Check if the email service is operational.
+
+### 2. Send Verification Code Email
+
+- **Endpoint**: /email/send-verification-code
+- **Method**: POST
+- **Description**: Send an email with a verification code.
+
+### 3. Account Created - Pending
+
+- **Endpoint**: /email/account-pending
+- **Method**: POST
+- **Description**: Send an email indicating that the account creation is pending.
+
+### 4. Account Created - Successfully
+
+- **Endpoint**: /email/account-created
+- **Method**: POST
+- **Description**: Send an email confirming the successful creation of the account.
+
+### 5. Account Not Created - Successfully
+- **Endpoint**: /email/account-not-created
+- **Method**: POST
+- **Description**: Send an email indicating a problem in creating the account.
+
+### 6. Vehicle Created - Pending
+- **Endpoint**: /email/vihecule-pending
+- **Method**: POST
+- **Description**: Send an email indicating that the vehicle creation is pending.
+
+### 7. Vehicle Created - Successfully
+- **Endpoint**: /email/vihecule-created
+- **Method**: POST
+- **Description**: Send an email confirming the successful creation of the vehicle.
+
+### 8. Vehicle Not Created - Successfully
+- **Endpoint**: /email/vihecule-not-created
+- **Method**: POST
+- **Description**: Send an email indicating a problem in creating the vehicle.
+
+### 9. Permit Created - Pending
+- **Endpoint**: /email/permit-pending
+- **Method**: POST
+- **Description**: Send an email indicating that the permit creation is pending.
+
+### 10. Permit Created - Successfully
+- **Endpoint**: /email/permit-created
+- **Method**: POST
+- **Description**: Send an email confirming the successful creation of the permit.
+
+### 11. Permit Not Created - Successfully
+- **Endpoint**: /email/permit-not-created
+- **Method**: POST
+- **Description**: Send an email indicating a problem in adding the permit.
+
+### 12. Assurance Created - Pending
+- **Endpoint**: /email/assurance-pending
+- **Method**: POST
+- **Description**: Send an email indicating that the assurance creation is pending.
+
+### 13. Assurance Created - Successfully
+- **Endpoint**: /email/assurance-created
+- **Method**: POST
+- **Description**: Send an email confirming the successful creation of the assurance.
+
+### 14. Assurance Not Created - Successfully
+- **Endpoint**: /email/assurance-not-created
+- **Method**: POST
+- **Description**: Send an email indicating a problem in adding the assurance.
+
+### 15. Documentation
+- **Endpoint**: /docs
+- **Method**: GET
+- **Description**: Retrieve API documentation using Swagger UI.
+
+
+
+
+
+
+
+
+
+
+
 ## Stay in touch :
 - Author - [Ouail Laamiri](https://www.linkedin.com/in/ouaillaamiri/)
 - Test - [Postman](https://www.postman.com/avionics-meteorologist-32935362/workspace/postman-api-fundamentals-student-expert/collection/29141176-d8a87c81-7d33-47bc-b379-e379f417a314?action=share&creator=29141176)
