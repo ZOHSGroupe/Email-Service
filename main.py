@@ -100,18 +100,18 @@ def vihecule_not_added_successfully():
                        os.getenv("BODY_EMAIL_PROBLEM_IN_CREATE_VEHICLE"), True)
 
 
-@app.route('/email/permit-pending', methods=['POST'])
+@app.route('/email/licence-driver-pending', methods=['POST'])
 def permit_created_pending():
     return send_email_(os.getenv("SUBJECT_EMAIL_PERMIT_PENDING"), os.getenv("BODY_EMAIL_PERMIT_PENDING"))
 
 
-@app.route('/email/permit-created', methods=['POST'])
+@app.route('/email/licence-driver-created', methods=['POST'])
 def permit_created_successfully():
     return send_email_(os.getenv("SUBJECT_EMAIL_PERMIT_ADDED_SUCCESSFULLY"),
                        os.getenv("BODY_EMAIL_PERMIT_ADDED_SUCCESSFULLY"))
 
 
-@app.route('/email/permit-not-created', methods=['POST'])
+@app.route('/email/licence-driver-not-created', methods=['POST'])
 def permit_not_added_successfully():
     return send_email_(os.getenv("SUBJECT_EMAIL_PROBLEM_IN_ADD_PERMIT"), os.getenv("BODY_EMAIL_PROBLEM_IN_ADD_PERMIT"),
                        True)

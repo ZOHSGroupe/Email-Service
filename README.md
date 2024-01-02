@@ -51,6 +51,8 @@ $ docker run -p 5000:5000 email-service
 ### 5. Account Not Created - Successfully
 - **Endpoint**: `/email/account-not-created`
 - **Method**: POST
+- **Request body**:
+  - `message` : Description of the issue encountered during account creation by the administrator.
 - **Description**: Send an email indicating a problem in creating the account.
 
 ### 6. Vehicle Created - Pending
@@ -66,21 +68,25 @@ $ docker run -p 5000:5000 email-service
 ### 8. Vehicle Not Created - Successfully
 - **Endpoint**: `/email/vihecule-not-created`
 - **Method**: POST
+- **Request body**:
+  - `message` : Description of the issue encountered during vihecule creation by the administrator.
 - **Description**: Send an email indicating a problem in creating the vehicle.
 
 ### 9. Permit Created - Pending
-- **Endpoint**: `/email/permit-pending`
+- **Endpoint**: `/email/licence-driver-pending`
 - **Method**: POST
 - **Description**: Send an email indicating that the permit creation is pending.
 
 ### 10. Permit Created - Successfully
-- **Endpoint**: `/email/permit-created`
+- **Endpoint**: `/email/licence-driver-created`
 - **Method**: POST
 - **Description**: Send an email confirming the successful creation of the permit.
 
 ### 11. Permit Not Created - Successfully
-- **Endpoint**: `/email/permit-not-created`
+- **Endpoint**: `/email/licence-driver-not-created`
 - **Method**: POST
+- **Request body**:
+  - `message` : Description of the issue encountered during licence driver creation by the administrator.
 - **Description**: Send an email indicating a problem in adding the permit.
 
 ### 12. Assurance Created - Pending
@@ -96,6 +102,8 @@ $ docker run -p 5000:5000 email-service
 ### 14. Assurance Not Created - Successfully
 - **Endpoint**: `/email/assurance-not-created`
 - **Method**: POST
+- **Request body**:
+  - `message` : Description of the issue encountered during assurance creation by the administrator.
 - **Description**: Send an email indicating a problem in adding the assurance.
 
 ### 15. Documentation
