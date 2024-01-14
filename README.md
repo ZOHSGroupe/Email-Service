@@ -129,5 +129,5 @@ $ docker run -p 5000:5000 email-service
 
 ## License
 
-Email-Service is [MIT licensed](LICENSE).
+Email-Service is [GPL licensed](LICENSE).
 
