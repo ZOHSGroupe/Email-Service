@@ -18,7 +18,7 @@ import secrets
 import string
 
 
-def generate_random_code(length=10):
+def generate_random_code(length=6):
     """
     Generate a random code of the specified length.
 

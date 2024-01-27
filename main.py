@@ -1,13 +1,19 @@
-from flask import Flask, request, jsonify, render_template
-from flask_cors import CORS
+from flask import Flask, request, jsonify, render_template,Blueprint
+from flask_cors import CORS,cross_origin
 import os
 from dotenv import load_dotenv
 from email_ import send_email, is_valid_email
 from random_secret import generate_random_code
 
 app = Flask(__name__)
-# Enable CORS for all routes
-CORS(app)
+CORS(app,resources={
+    r"/*/*" : {
+        "origins": "*"
+    }
+})
+
+
+
 load_dotenv()
 
 
@@ -56,6 +62,7 @@ def send_email_(subject, body, message: bool = False, verification_code: bool = 
 
 
 @app.route('/', methods=['GET'])
+@cross_origin()
 def index():
     return jsonify({"message": "Email service work"}), 200
 
@@ -137,3 +144,7 @@ def assurance_not_added_successfully():
 @app.route('/docs', methods=['GET'])
 def get_docs():
     return render_template('swaggerui.html')
+
+
+if __name__=="__main__":
+     app.run(host="localhost",port=7001)
